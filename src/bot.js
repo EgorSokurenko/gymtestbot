@@ -22,7 +22,7 @@ const trainerKeyboard = {
     reply_markup: {
       keyboard: [
         ['Додати тренування'], 
-        ['Переглянути свої записи']
+        ['Переглянути записи']
       ],
       resize_keyboard: true,
       one_time_keyboard: false
