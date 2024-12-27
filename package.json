@@ -1,0 +1,20 @@
+{
+  "name": "gym-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for gym management",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.12",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.3.0",
+    "node-telegram-bot-api": "^0.61.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
