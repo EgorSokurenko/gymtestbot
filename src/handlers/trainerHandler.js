@@ -333,7 +333,8 @@ const registerCommands = (bot) => {
 
         if (data.startsWith('select_date_')) {
             const scheduleId = data.replace('select_date_', '');
-            await bot.sendMessage(chatId, `Ви хочете записатися на тренування?`, {
+            let schedule = await TrainingSchedule.findById(scheduleId).populate('trainerId');
+            await bot.sendMessage(chatId, `Ви хочете записатися на тренування ${schedule.trainerId?.name}?`, {
                 reply_markup: {
                     inline_keyboard: [
                         [
