@@ -3,6 +3,7 @@ const Hapi = require('@hapi/hapi');
 const mongoose = require('mongoose');
 const bot = require('./bot');
 const trainerRoutes = require('./routes/trainerRoutes');
+const cron = require('./utils/cron');
 
 const init = async () => {
     const server = Hapi.server({
