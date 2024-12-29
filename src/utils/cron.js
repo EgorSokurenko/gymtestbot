@@ -6,13 +6,13 @@ const TrainingSchedule = require('../models/TrainingSchedule'); // Training sche
 const UKRAINE_TIMEZONE = 'Europe/Kiev';
 
 // Cron job to check for upcoming trainings and send reminders
-cron.schedule('1 * * * *', async () => {
+cron.schedule('* * * * *', async () => {
     console.log('Checking for upcoming trainings to send reminders...');
     
     try {
         // Get the current time and the time one hour later
         const now = moment().tz(UKRAINE_TIMEZONE);
-        const oneHourLater =now.clone().add(1, 'hours');
+        const oneHourLater = now.clone().add(1, 'hours');
 
         // Find trainings that will start in the next hour
         const upcomingTrainings = await TrainingSchedule.find({
