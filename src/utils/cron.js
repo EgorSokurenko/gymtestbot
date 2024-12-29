@@ -1,18 +1,17 @@
 const cron = require('node-cron');
-const moment = require('moment-timezone'); // For working with dates and times
+const moment = require('moment'); // For working with dates and times
 const bot = require('../bot'); // Your Telegram bot instance
 const TrainingSchedule = require('../models/TrainingSchedule'); // Training schedule model
 
-const UKRAINE_TIMEZONE = 'Europe/Kiev';
 
 // Cron job to check for upcoming trainings and send reminders
-cron.schedule('* * * * *', async () => {
+cron.schedule('1 * * * *', async () => {
     console.log('Checking for upcoming trainings to send reminders...');
     
     try {
         // Get the current time and the time one hour later
-        const now = moment().tz(UKRAINE_TIMEZONE);
-        const oneHourLater = now.clone().add(1, 'hours');
+        const now = moment().add(2, 'hours');
+        const oneHourLater = now.clone().add(3, 'hours');
 
         // Find trainings that will start in the next hour
         const upcomingTrainings = await TrainingSchedule.find({

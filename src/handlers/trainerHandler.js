@@ -290,8 +290,6 @@ const registerCommands = (bot) => {
     // === Commands registration ===
     bot.onText(/\/trainers/, (msg) => listTrainers(msg.chat.id));
 
-    bot.onText(/\/add_date (.+)/, (msg, match) => addTrainingDate(msg.chat.id, match[1]));
-
     bot.onText(/\/my_bookings/, (msg) => getMyBookings(msg.chat.id));
 
     bot.onText(/\/book_training/, (msg) => fetchTrainerList(msg.chat.id));
