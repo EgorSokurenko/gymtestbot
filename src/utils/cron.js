@@ -1,5 +1,5 @@
 const cron = require('node-cron');
-const moment = require('moment'); // For working with dates and times
+const moment = require('moment-timezone'); // For working with dates and times
 const bot = require('../bot'); // Your Telegram bot instance
 const TrainingSchedule = require('../models/TrainingSchedule'); // Training schedule model
 
